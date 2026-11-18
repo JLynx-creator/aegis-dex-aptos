@@ -1,0 +1,15 @@
+[package]
+name = "aegis_testnet_tokens"
+version = "0.1.0"
+authors = []
+
+[addresses]
+aegis_test = "_"
+
+[dev-addresses]
+aegis_test = "0xbeef"
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-framework"

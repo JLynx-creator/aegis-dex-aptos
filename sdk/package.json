@@ -1,0 +1,25 @@
+{
+  "name": "@aegis-dex/sdk",
+  "version": "0.1.0",
+  "description": "TypeScript SDK for the Aegis constant-product AMM on Aptos",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "peerDependencies": {
+    "@aptos-labs/ts-sdk": ">=1.30.0"
+  },
+  "devDependencies": {
+    "@aptos-labs/ts-sdk": "^5.2.1",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  }
+}

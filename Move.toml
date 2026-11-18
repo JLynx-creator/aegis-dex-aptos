@@ -1,0 +1,15 @@
+[package]
+name = "aegis"
+version = "0.1.0"
+authors = []
+
+[addresses]
+aegis = "_"
+
+[dev-addresses]
+aegis = "0xcafe"
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-framework"

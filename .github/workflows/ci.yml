@@ -1,0 +1,27 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+env:
+  APTOS_CLI_VERSION: "9.6.0"
+jobs:
+  move:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Aptos CLI
+        run: |
+          curl -fsSL -o aptos.zip "https://github.com/aptos-labs/aptos-core/releases/download/aptos-cli-v${APTOS_CLI_VERSION}/aptos-cli-${APTOS_CLI_VERSION}-Ubuntu-22.04-x86_64.zip"
+          unzip aptos.zip && chmod +x aptos && sudo mv aptos /usr/local/bin/ && aptos --version
+      - run: ./scripts/test.sh
+  ts:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: make test-app

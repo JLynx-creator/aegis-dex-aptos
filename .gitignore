@@ -1,0 +1,12 @@
+build/
+**/build/
+node_modules/
+dist/
+.coverage_map.mvcov
+.trace
+.env
+.env.*
+!.env.example
+config/testnet.env
+*.log
+.aptos/
